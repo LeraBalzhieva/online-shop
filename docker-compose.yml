@@ -3,7 +3,7 @@ services:
    web:
      image: nginx
      volumes:
-       - './src/public:/var/www/html'
+       - '.:/var/www/html'
        - './docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf'
      ports:
        - "81:80"
@@ -11,9 +11,9 @@ services:
    php-fpm:
      build: ./docker
      volumes:
-       -
-       - './src/public:/var/www/html'
 
+       - '.:/var/www/html'
+       - './docker/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini'
    db:
      image: postgres:14.1
      environment:

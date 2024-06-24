@@ -1,5 +1,5 @@
 
-<form action="handle_registration.php" method="POST">
+<form action="../handler/handle_registration.php" method="POST">
     <div class="container">
         <h1>Register</h1>
         <p>Please fill in this form to create an account.</p>
